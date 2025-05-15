@@ -18,5 +18,9 @@ export const appRoutes: Routes = [
   },
 
     { path: '', redirectTo: '/home', pathMatch: 'full' },
+    {
+      path: '**',
+      loadComponent: () => import('./404/404.component').then((m) => m.NotFoundComponent),
+    }
 ];
 
