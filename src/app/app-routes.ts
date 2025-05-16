@@ -1,5 +1,4 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 
 export const appRoutes: Routes = [
   {
@@ -17,10 +16,10 @@ export const appRoutes: Routes = [
     loadChildren: () => import('./home/home.routes').then((m) => m.homeRoutes),
   },
 
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
-    {
-      path: '**',
-      loadComponent: () => import('./404/404.component').then((m) => m.NotFoundComponent),
-    }
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {
+    path: '**',
+    loadComponent: () =>
+      import('./404/404.component').then((m) => m.NotFoundComponent),
+  },
 ];
-

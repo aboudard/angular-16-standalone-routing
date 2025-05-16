@@ -1,1 +1,14 @@
 <p>users works!</p>
+<p>
+  <button (click)="setFilter(1)">id 1</button>
+  <button (click)="setFilter(2)">id 2</button>
+</p>
+<ul>
+  @for (user of users$ | async; track $index) {
+    <li>
+      <a>
+        {{ user.name }}
+      </a>
+    </li>
+  }
+</ul>

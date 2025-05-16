@@ -1,1 +1,13 @@
 <p>home works!</p>
+<form #actorForm="ngForm" (ngSubmit)="onSubmit(actorForm)">
+  <div>
+    <input type="text" class="form-control" id="name" pattern="[0-9]{3}" required [(ngModel)]="model.name" name="name">
+    <app-stuff [(ngModel)]="model.range" name="range" />
+  </div>
+  <div>
+    {{ model | json }}
+  </div>
+  <div>
+    <button [disabled]="!actorForm.valid" type="submit">OK</button>
+  </div>
+</form>
