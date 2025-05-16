@@ -1,0 +1,11 @@
+<p>list : </p>
+<div>
+  <button (click)="refreshList()">refresh</button>
+</div>
+<ul>
+  @for (item of list; track $index) {
+    <li>
+      {{item}}
+    </li>
+  }
+</ul>

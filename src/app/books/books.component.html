@@ -1,7 +1,8 @@
 <p>books works!</p>
 <div>
   <button (click)="setId()">Set ID</button>
+  <button (click)="updateCurrentBook()">update Book</button>
 </div>
-<div>
-  Current Book ID: {{ currentBookId() }}
-</div>
+<div>curent Book: {{ currentBook().label }}</div>
+<div>Current Book ID: {{ currentBookId() }}</div>
+<div>Derived ID: {{ derivedId() }}</div>

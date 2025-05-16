@@ -15,7 +15,10 @@ export const appRoutes: Routes = [
     path: 'home',
     loadChildren: () => import('./home/home.routes').then((m) => m.homeRoutes),
   },
-
+  {
+    path: 'mark',
+    loadComponent: () => import('./mark/mark.component').then((m) => m.MarkComponent)
+  },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: '**',
