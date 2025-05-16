@@ -3,30 +3,42 @@ import {
   ChangeDetectorRef,
   Component,
   inject,
-  Input,
   OnChanges,
   SimpleChanges,
+  input,
+  effect,
+  Input,
+  OnInit
 } from '@angular/core';
 
 @Component({
-  selector: 'app-sub',
-  standalone: true,
-  imports: [],
-  templateUrl: './sub.component.html',
-  styleUrl: './sub.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-sub',
+    imports: [],
+    templateUrl: './sub.component.html',
+    styleUrl: './sub.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SubComponent implements OnChanges {
+export class SubComponent implements OnInit {
+
   @Input()
-  list!: string[];
+  test!: string;
+
+  readonly list = input.required<string[]>();
   cd = inject(ChangeDetectorRef);
 
   refreshList(): void {
     this.cd.detectChanges();
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('changes', changes);
+  constructor() {
+    console.log('test', this.test);
+    effect(() => {
+      console.log(`The current list is: ${this.list()}`);
+    });
+  }
+
+  ngOnInit(): void {
+    console.log('test init', this.list());
   }
 
 }

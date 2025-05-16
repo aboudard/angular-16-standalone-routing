@@ -7,10 +7,9 @@ import { BehaviorSubject, combineLatest, filter, map } from 'rxjs';
     selector: 'app-users',
     templateUrl: './users.component.html',
     styleUrls: ['./users.component.scss'],
-    standalone: true,
     imports: [
-      AsyncPipe
-    ],
+        AsyncPipe
+    ]
 })
 export class UsersComponent {
 

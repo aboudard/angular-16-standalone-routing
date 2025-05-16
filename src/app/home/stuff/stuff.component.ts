@@ -3,23 +3,22 @@ import { Component } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors, Validator } from '@angular/forms';
 
 @Component({
-  selector: 'app-stuff',
-  standalone: true,
-  imports: [NgStyle],
-  templateUrl: './stuff.component.html',
-  styleUrl: './stuff.component.scss',
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: StuffComponent,
-      multi: true,
-    },
-    {
-      provide: NG_VALIDATORS,
-      multi: true,
-      useExisting: StuffComponent
-    }
-  ],
+    selector: 'app-stuff',
+    imports: [NgStyle],
+    templateUrl: './stuff.component.html',
+    styleUrl: './stuff.component.scss',
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: StuffComponent,
+            multi: true,
+        },
+        {
+            provide: NG_VALIDATORS,
+            multi: true,
+            useExisting: StuffComponent
+        }
+    ]
 })
 export class StuffComponent implements ControlValueAccessor, Validator {
 

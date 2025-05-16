@@ -2,12 +2,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { SubComponent } from './sub/sub.component';
 
 @Component({
-  selector: 'app-mark',
-  standalone: true,
-  imports: [SubComponent],
-  templateUrl: './mark.component.html',
-  styleUrl: './mark.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-mark',
+    imports: [SubComponent],
+    templateUrl: './mark.component.html',
+    styleUrl: './mark.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MarkComponent {
 

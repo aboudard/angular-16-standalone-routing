@@ -3,7 +3,7 @@
   <button (click)="refreshList()">refresh</button>
 </div>
 <ul>
-  @for (item of list; track $index) {
+  @for (item of list(); track $index) {
     <li>
       {{item}}
     </li>

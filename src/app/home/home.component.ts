@@ -4,11 +4,10 @@ import { StuffComponent } from './stuff/stuff.component';
 import { JsonPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
-  standalone: true,
-  imports: [FormsModule, StuffComponent, JsonPipe],
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss'],
+    imports: [FormsModule, StuffComponent, JsonPipe]
 })
 export class HomeComponent {
   model = {
