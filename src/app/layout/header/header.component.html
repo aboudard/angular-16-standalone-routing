@@ -1,0 +1,6 @@
+<div>
+  <span>whatever you want </span>
+  @if(count$ | async; as count) {
+  <span [innerText]="count" id="num"></span>
+  }
+</div>
