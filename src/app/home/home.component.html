@@ -1,4 +1,4 @@
-<p>home works!</p>
+<p>home works! / {{ machinText() }}</p>
 <form #actorForm="ngForm" (ngSubmit)="onSubmit(actorForm)">
   <div>
     <input type="text" class="form-control" id="name" pattern="[0-9]{3}" required [(ngModel)]="model.name" name="name">
@@ -13,3 +13,4 @@
 </form>
 <hr>
 <div><button (click)="incrementCount()">Counter</button></div>
+<app-machin-viewchild />
