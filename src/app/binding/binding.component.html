@@ -1,0 +1,23 @@
+<p>binding works!</p>
+<div>
+  <button (click)="changeFlag()">Change Flag</button>
+  <button (click)="setCount()">Increment Count</button>
+  Parent Flag: {{ parentFlag() }}
+</div>
+<div><input type="checkbox" [(ngModel)]="parentFlag" /> Two-way Binding</div>
+<div>
+  <app-child [(flag)]="parentFlag"></app-child>
+</div>
+
+<div>
+  @if (post.hasValue()) {
+  <p>Post Title: {{ post.value() | json }}</p>
+  }
+</div>
+
+<div>
+  <p>Count: {{ count() }}</p>
+</div>
+@defer(when count() > 1){
+<app-dyn />
+}

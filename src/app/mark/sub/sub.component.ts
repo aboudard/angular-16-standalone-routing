@@ -7,7 +7,6 @@ import {
   SimpleChanges,
   input,
   effect,
-  Input,
   OnInit
 } from '@angular/core';
 
@@ -20,8 +19,7 @@ import {
 })
 export class SubComponent implements OnInit {
 
-  @Input()
-  test!: string;
+  readonly test = input.required<string>();
 
   readonly list = input.required<string[]>();
   cd = inject(ChangeDetectorRef);
@@ -31,7 +29,7 @@ export class SubComponent implements OnInit {
   }
 
   constructor() {
-    console.log('test', this.test);
+    console.log('test', this.test());
     effect(() => {
       console.log(`The current list is: ${this.list()}`);
     });

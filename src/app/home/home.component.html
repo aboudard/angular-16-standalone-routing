@@ -14,3 +14,7 @@
 <hr>
 <div><button (click)="incrementCount()">Counter</button></div>
 <app-machin-viewchild />
+<hr>
+<div>{{ count() }} - <button (click)="increment()">Increment</button></div>
+<div>Double: {{ doubleCount() }}</div>
+<div><app-test-input [data]="test()" /></div>

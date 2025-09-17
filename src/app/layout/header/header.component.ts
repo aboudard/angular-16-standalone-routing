@@ -1,7 +1,7 @@
 import { AsyncPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { getCount } from 'src/app/selectors/counter.selectors';
+import { getCount } from '../../store/selectors/counter.selectors';
 
 @Component({
   selector: 'app-header',

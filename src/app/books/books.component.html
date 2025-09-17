@@ -1,8 +1,16 @@
 <p>books works!</p>
+<p>Loading: {{ store.isLoading() }} <button (click)="setIsLoading()">Set Loading</button></p>
 <div>
   <button (click)="setId()">Set ID</button>
   <button (click)="updateCurrentBook()">update Book</button>
 </div>
+<ul>
+  @for (book of books; track book.id) {
+    <li>
+      <a [routerLink]="['/books', book.id]">{{ book.title }}</a>
+    </li>
+  }
+</ul>
 <div>curent Book: {{ currentBook().label }}</div>
 <div>Current Book ID: {{ currentBookId() }}</div>
 <div>Derived ID: {{ derivedId() }}</div>

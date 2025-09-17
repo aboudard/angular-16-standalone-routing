@@ -19,6 +19,10 @@ export const appRoutes: Routes = [
     path: 'mark',
     loadComponent: () => import('./mark/mark.component').then((m) => m.MarkComponent)
   },
+  {
+    path: 'binding',
+    loadComponent: () => import('./binding/binding.component').then((m) => m.BindingComponent)
+  },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: '**',
